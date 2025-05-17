@@ -1,6 +1,11 @@
 import { Schema, model } from "mongoose";
 
 const CommentSchema = Schema({
+    publicationId: { 
+        type: Schema.Types.ObjectId,
+        ref: 'Publication',
+        required: true
+    },
     name: {
         type: String,
         required: true,

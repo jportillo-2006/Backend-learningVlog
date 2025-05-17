@@ -2,9 +2,14 @@ import Comment from './comment.model.js';
 
 export const saveComment = async (req, res) => {
     try {
-        const data = req.body;
+        const { publicationId, name, content } = req.body;
 
-        const comment = new Comment(data);
+        const comment = new Comment({
+            name,
+            content,
+            publicationId
+        });
+
         await comment.save();
 
         res.status(200).json({
@@ -127,6 +132,27 @@ export const deleteComment = async (req, res) => {
         res.status(500).json({
             success: false,
             message: 'error deleting comment',
+            error
+        });
+    }
+};
+
+export const getCommentsByPublication = async (req, res) => {
+    const { publicationId } = req.params;
+
+    try {
+        const comments = await Comment.find({ publicationId })
+            .sort({ createdAt: -1 });
+
+        res.status(200).json({
+            success: true,
+            comments
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: 'Error fetching comments',
             error
         });
     }
