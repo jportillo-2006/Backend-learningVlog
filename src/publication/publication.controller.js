@@ -14,10 +14,19 @@ export const savePublication = async (req, res) => {
         });
 
     } catch (error) {
+        if (error.name === 'ValidationError') {
+            const errors = Object.values(error.errors).map(e => e.message);
+            return res.status(400).json({
+                success: false,
+                message: 'Validation error',
+                errors
+            });
+        }
+
         res.status(500).json({
             success: false,
             message: 'Error saving publication',
-            error
+            error: error.message
         });
     }
 };
@@ -55,37 +64,48 @@ export const updatePublication = async (req, res) => {
     const { _id, createdAt, updatedAt, ...data } = req.body;
 
     try {
-        const publication = await Publication.findByIdAndUpdate(id, data, { new: true });
+        const existingPublication = await Publication.findById(id);
 
-        if (!publication) {
+        if (!existingPublication) {
             return res.status(404).json({
                 success: false,
                 message: 'Publication not found'
             });
         }
 
+        if (!existingPublication.status) {
+            return res.status(403).json({
+                success: false,
+                message: 'Cannot edit a deleted or disabled publication'
+            });
+        }
+
+        const updatedPublication = await Publication.findByIdAndUpdate(id, data, { new: true });
+
         res.status(200).json({
             success: true,
             message: 'Publication updated successfully',
-            publication
+            publication: updatedPublication
         });
 
     } catch (error) {
         res.status(500).json({
             success: false,
             message: 'Error updating publication',
-            error
+            error: error.message
         });
     }
 };
 
 export const getPublications = async (req, res) => {
-    const { limite = 10, desde = 0, course } = req.query;
+    const { limite = 10, desde = 0, course, sortBy = 'createdAt', order = 'desc' } = req.query;
     const query = { status: true };
 
     if (course) {
         query.course = course;
     }
+    
+    const sortOrder = order === 'asc' ? 1 : -1;
 
     try {
         const [total, publications] = await Promise.all([
@@ -93,7 +113,7 @@ export const getPublications = async (req, res) => {
             Publication.find(query)
                 .skip(Number(desde))
                 .limit(Number(limite))
-                .sort({ createdAt: -1 })
+                .sort({ [sortBy]: sortOrder })
         ]);
 
         res.status(200).json({
@@ -106,7 +126,7 @@ export const getPublications = async (req, res) => {
         res.status(500).json({
             success: false,
             message: 'Error fetching publications',
-            error
+            error: error.message
         });
     }
 };

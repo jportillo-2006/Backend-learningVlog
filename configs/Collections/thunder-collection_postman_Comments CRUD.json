@@ -1,0 +1,147 @@
+{
+    "info": {
+        "_postman_id": "6c394a5c-6e14-4714-919f-11d22c433b8a",
+        "name": "Comments CRUD",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Save",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:3000/learningVlog/v1/comments/",
+                    "path": [
+                        "learningVlog",
+                        "v1",
+                        "comments"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"publicationId\": \"682949eba97d69a5ac88be87\",\n  \"name\": \"trava412\",\n  \"content\": \"diavlo\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Search",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/learningVlog/v1/comments/68295818f41ac902772c6029",
+                    "path": [
+                        "learningVlog",
+                        "v1",
+                        "comments",
+                        "68295818f41ac902772c6029"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                }
+            }
+        },
+        {
+            "name": "Get",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/learningVlog/v1/comments/",
+                    "path": [
+                        "learningVlog",
+                        "v1",
+                        "comments"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                }
+            }
+        },
+        {
+            "name": "Update",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "http://localhost:3000/learningVlog/v1/comments/682957d3f41ac902772c6026",
+                    "path": [
+                        "learningVlog",
+                        "v1",
+                        "comments",
+                        "682957d3f41ac902772c6026"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"publicationId\": \"682949d4a97d69a5ac88be85\",\n  \"name\": \"panito2\",\n  \"content\": \"e diavlo\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Delete",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:3000/learningVlog/v1/comments/6829584ef41ac902772c602b",
+                    "path": [
+                        "learningVlog",
+                        "v1",
+                        "comments",
+                        "6829584ef41ac902772c602b"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                }
+            }
+        },
+        {
+            "name": "get Comments By Publication",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/learningVlog/v1/comments/publication/682949d4a97d69a5ac88be85",
+                    "path": [
+                        "learningVlog",
+                        "v1",
+                        "comments",
+                        "publication",
+                        "682949d4a97d69a5ac88be85"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                }
+            }
+        }
+    ]
+}

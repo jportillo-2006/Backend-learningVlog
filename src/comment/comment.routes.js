@@ -20,19 +20,15 @@ router.post(
 router.get(
     "/:id",
     [
-        commentsValidator,
-        validarCampos
-    ],
-    searchComment
+        searchComment
+    ]
 )
 
 router.delete(
     '/:id',
     [
-        commentsValidator,
-        validarCampos
-    ],
-    deleteComment
+        deleteComment
+    ]
 )
 
 router.put(

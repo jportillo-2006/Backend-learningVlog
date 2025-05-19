@@ -2,12 +2,13 @@ import Comment from './comment.model.js';
 
 export const saveComment = async (req, res) => {
     try {
-        const { publicationId, name, content } = req.body;
+        console.log("Body recibido en saveComment:", req.body);
+        const { publication, name, content } = req.body;
 
         const comment = new Comment({
             name,
             content,
-            publicationId
+            publicationId: publication
         });
 
         await comment.save();
@@ -19,10 +20,11 @@ export const saveComment = async (req, res) => {
         });
 
     } catch (error) {
+        console.error(error);
         res.status(500).json({
             success: false,
             message: 'Error saving comment',
-            error
+            error: error.message
         });
     }
 };

@@ -19,19 +19,15 @@ router.post(
 router.get(
     "/:id",
     [
-        publicationValidator,
-        validarCampos
-    ],
-    searchPublication
+        searchPublication
+    ]
 )
 
 router.delete(
     '/:id',
     [
-        publicationValidator,
-        validarCampos
-    ],
-    deletePublication
+        deletePublication
+    ]
 )
 
 router.put(

@@ -1,0 +1,51 @@
+[{
+  "_id": {
+    "$oid": "682957d3f41ac902772c6026"
+  },
+  "publicationId": {
+    "$oid": "682949d4a97d69a5ac88be85"
+  },
+  "name": "panito2",
+  "content": "e diavlo",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-18T03:45:23.900Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T03:55:17.009Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68295818f41ac902772c6029"
+  },
+  "publicationId": {
+    "$oid": "682949d4a97d69a5ac88be85"
+  },
+  "name": "mcqueen",
+  "content": "Segundo",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-18T03:46:32.794Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T03:46:32.794Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6829584ef41ac902772c602b"
+  },
+  "publicationId": {
+    "$oid": "682949eba97d69a5ac88be87"
+  },
+  "name": "trava412",
+  "content": "diavlo",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-18T03:47:26.743Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T03:56:32.980Z"
+  }
+}]

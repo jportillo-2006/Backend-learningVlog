@@ -1,0 +1,161 @@
+{
+    "info": {
+        "_postman_id": "3bc117e0-f368-4b57-a544-f786fd6b57b0",
+        "name": "Publication CRUD",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Save",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:3000/learningVlog/v1/publication/",
+                    "path": [
+                        "learningVlog",
+                        "v1",
+                        "publication"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"title\": \"prueba3sincurso\",\n  \"content\": \"prueba3sincurso\",\n  \"course\": \"tupapa\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Get",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/learningVlog/v1/publication/",
+                    "path": [
+                        "learningVlog",
+                        "v1",
+                        "publication"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                }
+            }
+        },
+        {
+            "name": "Search",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/learningVlog/v1/publication/682949b7a97d69a5ac88be83",
+                    "path": [
+                        "learningVlog",
+                        "v1",
+                        "publication",
+                        "682949b7a97d69a5ac88be83"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                }
+            }
+        },
+        {
+            "name": "Delete",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:3000/learningVlog/v1/publication/682949b7a97d69a5ac88be83",
+                    "path": [
+                        "learningVlog",
+                        "v1",
+                        "publication",
+                        "682949b7a97d69a5ac88be83"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                }
+            }
+        },
+        {
+            "name": "Update",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "http://localhost:3000/learningVlog/v1/publication/682949b7a97d69a5ac88be83",
+                    "path": [
+                        "learningVlog",
+                        "v1",
+                        "publication",
+                        "682949b7a97d69a5ac88be83"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"title\": \"Primera publicacion editada\",\n  \"content\": \"Primera publicacion editada\",\n  \"course\": \"Taller\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Filter",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/learningVlog/v1/publication?sortBy=createdAt&order=asc",
+                    "query": [
+                        {
+                            "key": "course",
+                            "value": "Taller",
+                            "disabled": true
+                        },
+                        {
+                            "key": "sortBy",
+                            "value": "createdAt"
+                        },
+                        {
+                            "key": "order",
+                            "value": "asc"
+                        }
+                    ],
+                    "variable": [],
+                    "path": [
+                        "learningVlog",
+                        "v1",
+                        "publication"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,75 @@
+[{
+  "_id": {
+    "$oid": "682949b7a97d69a5ac88be83"
+  },
+  "title": "Primera publicacion",
+  "content": "Hola: Primera publicacion",
+  "course": "Tecnologia",
+  "status": false,
+  "createdAt": {
+    "$date": "2025-05-18T02:45:11.061Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T03:06:32.178Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682949d4a97d69a5ac88be85"
+  },
+  "title": "Segunda publicacion editada",
+  "content": "Segunda publicacion editada",
+  "course": "Taller",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-18T02:45:40.324Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T03:10:33.958Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682949eba97d69a5ac88be87"
+  },
+  "title": "Tercera publicacion",
+  "content": "Hola: tercera publicacion",
+  "course": "Practica supervisada",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-18T02:46:03.356Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T02:46:03.356Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68294a0da97d69a5ac88be89"
+  },
+  "title": "Prueba1",
+  "content": "Prueba1",
+  "course": "Taller",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-18T02:46:37.307Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T02:46:37.307Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68294cbb7b0944244279aa59"
+  },
+  "title": "prueba2",
+  "content": "prueba2",
+  "course": "Tecnologia",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-18T02:58:03.483Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T02:58:03.483Z"
+  }
+}]
